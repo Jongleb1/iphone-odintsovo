@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>iPhone Одинцово</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(160deg, #0f0f14, #1c1c2b);
+    color: white;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, #00ffaa22, transparent 40%),
+                radial-gradient(circle at 70% 60%, #00ffaa11, transparent 40%);
+    animation: moveBg 15s linear infinite;
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-10%, -10%); }
+    100% { transform: translate(0,0); }
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+.block {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    padding: 18px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+.block.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.button {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    margin-top: 12px;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+}
+
+.call-btn {
+    display: block;
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 12px;
+    border: 1px solid #00ffaa;
+    color: #00ffaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.call-btn:hover {
+    background: #00ffaa;
+    color: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.card {
+    background: rgba(255,255,255,0.03);
+    padding: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border: 1px solid #00ffaa;
+    box-shadow: 0 15px 40px rgba(0,255,170,0.3);
+}
+
+.grid:hover .card {
+    opacity: 0.4;
+}
+.grid .card:hover {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    background: #0f0f14;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.title { font-weight: bold; margin-top: 8px; }
+.spec { font-size: 12px; color: #bbb; }
+
+.fixed-call {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    background: #00ffaa;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="block">
+<h1>iPhone в Одинцово</h1>
+
+<p>
+🔥 В наличии сегодня<br>
+⚡ Встреча за 30–60 минут<br>
+✔ Проверка перед покупкой
+</p>
+
+<p style="color:#00ffaa;">Скидка действует: <span id="timer">10:00</span></p>
+
+<a class="button" href="tel:+89296506232">📞 Позвонить сейчас</a>
+</div>
+
+<div class="block">
+<h2>🔥 iPhone 17 Pro Max</h2>
+<p style="color:#00ffaa;">Осталось 1–2 штуки</p>
+
+<div class="grid">
+
+<div class="card">
+<img src="./iphone1.png">
+<div class="title">17 Pro Max 256</div>
+<div class="spec">111 500 ₽</div>
+<div class="spec">В наличии сегодня</div>
+<div class="spec" style="color:#00ffaa;">Сейчас смотрят: 3 человека</div>
+<a class="call-btn" href="tel:+89296506232">🔥 Забрать сегодня</a>
+</div>
+
+<div class="card">
+<img src="./iphone1.png">
+<div class="title">17 Pro Max 512</div>
+<div class="spec">129 000 ₽</div>
+<div class="spec">В наличии сегодня</div>
+<a class="call-btn" href="tel:+89296506232">🔥 Забрать сегодня</a>
+</div>
+
+<div class="card">
+<img src="./iphone1.png">
+<div class="title">17 Pro Max 1TB</div>
+<div class="spec">144 000 ₽</div>
+<div class="spec">В наличии сегодня</div>
+<a class="call-btn" href="tel:+89296506232">🔥 Забрать сегодня</a>
+</div>
+
+<div class="card">
+<img src="./iphone1.png">
+<div class="title">17 Pro Max 2TB</div>
+<div class="spec">171 000 ₽</div>
+<div class="spec">В наличии сегодня</div>
+<a class="call-btn" href="tel:+89296506232">🔥 Забрать сегодня</a>
+</div>
+
+</div>
+</div>
+
+<div class="block">
+<h2>📱 iPhone 16 Pro Max</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="./iphone2.png">
+<div class="title">16 Pro Max 256</div>
+<div class="spec">92 500 ₽</div>
+<div class="spec">В наличии сегодня</div>
+<a class="call-btn" href="tel:+89296506232">🔥 Забрать сегодня</a>
+</div>
+
+<div class="card">
+<img src="./iphone2.png">
+<div class="title">16 Pro Max 512</div>
+<div class="spec">111 500 ₽</div>
+<div class="spec">В наличии сегодня</div>
+<a class="call-btn" href="tel:+89296506232">🔥 Забрать сегодня</a>
+</div>
+
+<div class="card">
+<img src="./iphone2.png">
+<div class="title">16 Pro Max 1TB</div>
+<div class="spec">123 500 ₽</div>
+<div class="spec">В наличии сегодня</div>
+<a class="call-btn" href="tel:+89296506232">🔥 Забрать сегодня</a>
+</div>
+
+</div>
+</div>
+
+<div class="block">
+<h2>Гарантия</h2>
+<p>
+✔ Только оригинальные iPhone<br>
+✔ Проверка при вас<br>
+✔ Без предоплаты<br>
+✔ Оплата при получении
+</p>
+</div>
+
+<div class="block">
+<h2>Почему мы</h2>
+<p>
+Оригинальные iPhone<br>
+Проверка перед покупкой<br>
+Честные цены<br>
+Быстрое оформление
+</p>
+</div>
+
+</div>
+
+<a class="fixed-call" href="tel:+89296506232">
+📞 Позвонить сейчас
+</a>
+
+<!-- 🔥 LIVE ЭФФЕКТ -->
+<div id="live" style="
+position: fixed;
+bottom: 80px;
+left: 15px;
+background: black;
+padding: 10px;
+font-size: 12px;
+border: 1px solid #00ffaa;
+display:none;
+z-index:999;
+">
+Кто-то смотрит этот товар
+</div>
+
+<script>
+const blocks = document.querySelectorAll('.block');
+
+window.addEventListener('scroll', () => {
+    blocks.forEach(block => {
+        const top = block.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+            block.classList.add('show');
+        }
+    });
+});
+
+/* таймер */
+let time = 600;
+setInterval(() => {
+    let min = Math.floor(time / 60);
+    let sec = time % 60;
+    document.getElementById('timer').innerText = 
+        min + ":" + (sec < 10 ? "0"+sec : sec);
+    if(time > 0) time--;
+}, 1000);
+
+/* live эффект */
+setInterval(() => {
+    let el = document.getElementById('live');
+    el.style.display = 'block';
+    setTimeout(() => {
+        el.style.display = 'none';
+    }, 3000);
+}, 7000);
+</script>
+
+</body>
+</html>
