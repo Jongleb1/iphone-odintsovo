@@ -7,83 +7,106 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial;
-    background: linear-gradient(160deg, #0f0f14, #1c1c2b);
-    color: white;
+margin:0;
+font-family:Arial;
+background:linear-gradient(160deg,#0f0f14,#1c1c2b);
+color:white;
 }
 
-.container {
-    max-width: 650px;
-    margin: auto;
-    padding: 20px;
+.container{
+max-width:650px;
+margin:auto;
+padding:20px;
 }
 
-.block {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(15px);
-    padding: 18px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
+.block{
+background:rgba(255,255,255,0.05);
+padding:18px;
+margin-bottom:15px;
+border:1px solid rgba(255,255,255,0.1);
 }
 
-h1 { font-size: 26px; }
-h2 { margin-bottom: 10px; }
-
-.button {
-    display: block;
-    text-align: center;
-    padding: 14px;
-    margin-top: 12px;
-    border: 1px solid rgba(255,255,255,0.4);
-    color: white;
-    text-decoration: none;
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
 }
 
-.call-btn {
-    display: block;
-    margin-top: 8px;
-    padding: 10px;
-    font-size: 13px;
-    border: 1px solid #00ffaa;
-    color: #00ffaa;
-    text-decoration: none;
+.card{
+background:rgba(255,255,255,0.03);
+padding:10px;
+border:1px solid rgba(255,255,255,0.08);
+transition:.3s;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
+.card:hover{
+transform:translateY(-5px);
+border:1px solid #ff9a2a;
+box-shadow:0 0 20px rgba(255,140,0,0.25);
 }
 
-.card {
-    background: rgba(255,255,255,0.03);
-    padding: 12px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: 0.3s;
+.card img{
+width:100%;
+height:150px;
+object-fit:contain;
+background:#0f0f14;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-    border: 1px solid #00ffaa;
-    box-shadow: 0 0 25px rgba(0,255,170,0.4);
+.title{font-size:13px;margin-top:5px;}
+.price{font-weight:bold;font-size:14px;margin-top:3px;}
+
+.call-btn{
+display:block;
+margin-top:10px;
+padding:10px;
+font-size:13px;
+border-radius:10px;
+background:linear-gradient(135deg,#ff9a2a,#ffc46b);
+color:black;
+text-align:center;
+text-decoration:none;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 8px rgba(255,140,0,0.4);
+transition:0.2s;
 }
 
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-    background: #0f0f14;
-    padding: 10px;
+.call-btn:active{
+transform:scale(0.96);
 }
 
-.title { font-weight: bold; margin-top: 8px; }
-.price { font-size: 16px; margin-top: 4px; }
-.badge { font-size: 12px; margin-top: 4px; }
+.call-btn:hover{
+box-shadow:0 0 14px rgba(255,140,0,0.6);
+}
 
-.green { color: #00ffaa; }
-.yellow { color: #ffcc00; }
+/* 🔥 ПУЛЬС КНОПКИ */
+.fixed-call{
+position:fixed;
+bottom:15px;
+left:50%;
+transform:translateX(-50%);
+width:220px;
+background:linear-gradient(135deg,#ff9a2a,#ffc46b);
+color:black;
+text-align:center;
+padding:12px;
+font-weight:bold;
+text-decoration:none;
+border-radius:30px;
+font-size:14px;
+box-shadow:0 0 10px rgba(255,140,0,0.4);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0% { box-shadow: 0 0 10px rgba(255,140,0,0.4); }
+50% { box-shadow: 0 0 20px rgba(255,140,0,0.7); }
+100% { box-shadow: 0 0 10px rgba(255,140,0,0.4); }
+}
+
+.fixed-call:active{
+transform:translateX(-50%) scale(0.95);
+}
 </style>
 </head>
 
@@ -93,12 +116,41 @@ h2 { margin-bottom: 10px; }
 
 <div class="block">
 <h1>iPhone в Одинцово</h1>
-<p>
-iPhone 16 / 17 в наличии<br>
-Одинцово • встреча за 30–60 минут<br>
-Проверка перед покупкой • без предоплаты
+
+<p style="font-size:14px;color:#ccc;line-height:1.5;">
+🚗 Привезём сегодня • Проверка перед покупкой <br>
+💳 Оплата при встрече • Без предоплаты
 </p>
-<a class="button" href="tel:+89296506232">📞 Позвонить</a>
+
+</div>
+
+<!-- 17 PRO -->
+<div class="block">
+<h2>⚡ iPhone 17 Pro</h2>
+<div class="grid">
+
+<div class="card">
+<img src="iphone1.png">
+<div class="title">17 Pro 256 Orange</div>
+<div class="price">102 500 ₽</div>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2017%20Pro%20256%20Orange">Написать</a>
+</div>
+
+<div class="card">
+<img src="iphone1.png">
+<div class="title">17 Pro 512 Orange</div>
+<div class="price">118 000 ₽</div>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2017%20Pro%20512%20Orange">Написать</a>
+</div>
+
+<div class="card">
+<img src="iphone1.png">
+<div class="title">17 Pro 1TB Orange</div>
+<div class="price">134 500 ₽</div>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2017%20Pro%201TB%20Orange">Написать</a>
+</div>
+
+</div>
 </div>
 
 <!-- 17 PRO MAX -->
@@ -108,105 +160,69 @@ iPhone 16 / 17 в наличии<br>
 
 <div class="card">
 <img src="iphone1.png">
-<div class="title">17 Pro Max 256</div>
+<div class="title">17 Pro Max 256 Orange</div>
 <div class="price">111 500 ₽</div>
-<div class="badge green">Забрать сегодня</div>
-<div class="badge yellow">Осталось 2 шт</div>
-<a class="call-btn" href="tel:+89296506232">Узнать наличие</a>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2017%20Pro%20Max%20256%20Orange">Написать</a>
 </div>
 
 <div class="card">
 <img src="iphone1.png">
-<div class="title">17 Pro Max 512</div>
+<div class="title">17 Pro Max 512 Orange</div>
 <div class="price">129 000 ₽</div>
-<div class="badge green">Забрать сегодня</div>
-<div class="badge yellow">Осталось 2 шт</div>
-<a class="call-btn" href="tel:+89296506232">Узнать наличие</a>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2017%20Pro%20Max%20512%20Orange">Написать</a>
 </div>
 
 <div class="card">
 <img src="iphone1.png">
-<div class="title">17 Pro Max 1TB</div>
+<div class="title">17 Pro Max 1TB Orange</div>
 <div class="price">144 000 ₽</div>
-<div class="badge green">Забрать сегодня</div>
-<div class="badge yellow">Осталось 1 шт</div>
-<a class="call-btn" href="tel:+89296506232">Узнать наличие</a>
-</div>
-
-<div class="card">
-<img src="iphone1.png">
-<div class="title">17 Pro Max 2TB</div>
-<div class="price">171 000 ₽</div>
-<div class="badge green">Забрать сегодня</div>
-<div class="badge yellow">Осталось 1 шт</div>
-<a class="call-btn" href="tel:+89296506232">Узнать наличие</a>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2017%20Pro%20Max%201TB%20Orange">Написать</a>
 </div>
 
 </div>
 </div>
 
-<!-- 16 PRO MAX -->
+<!-- 16 SERIES -->
 <div class="block">
-<h2>📱 iPhone 16 Pro Max</h2>
+<h2>📱 iPhone 16 серия</h2>
 <div class="grid">
 
 <div class="card">
 <img src="iphone2.png">
-<div class="title">16 Pro Max 256</div>
-<div class="price">92 500 ₽</div>
-<div class="badge green">Забрать сегодня</div>
-<div class="badge yellow">Осталось 3 шт</div>
-<a class="call-btn" href="tel:+89296506232">Узнать наличие</a>
+<div class="title">16 Pro 128 Black</div>
+<div class="price">90 500 ₽</div>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2016%20Pro%20128%20Black">Написать</a>
 </div>
 
 <div class="card">
 <img src="iphone2.png">
-<div class="title">16 Pro Max 512</div>
+<div class="title">16 Pro 128 White</div>
+<div class="price">77 500 ₽</div>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2016%20Pro%20128%20White">Написать</a>
+</div>
+
+<div class="card">
+<img src="iphone2.png">
+<div class="title">16 Pro Max 256 Natural</div>
+<div class="price">98 500 ₽</div>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2016%20Pro%20Max%20256%20Natural">Написать</a>
+</div>
+
+<div class="card">
+<img src="iphone2.png">
+<div class="title">16 Pro Max 512 White</div>
 <div class="price">111 500 ₽</div>
-<div class="badge green">Забрать сегодня</div>
-<div class="badge yellow">Осталось 2 шт</div>
-<a class="call-btn" href="tel:+89296506232">Узнать наличие</a>
-</div>
-
-<div class="card">
-<img src="iphone2.png">
-<div class="title">16 Pro Max 1TB</div>
-<div class="price">123 500 ₽</div>
-<div class="badge green">Забрать сегодня</div>
-<div class="badge yellow">Осталось 1 шт</div>
-<a class="call-btn" href="tel:+89296506232">Узнать наличие</a>
+<a class="call-btn" href="sms:+79296506232?body=Здравствуйте,%20интересует%20iPhone%2016%20Pro%20Max%20512%20White">Написать</a>
 </div>
 
 </div>
 </div>
 
-<div class="block">
-<h2>Почему выбирают нас</h2>
-<p>
-Оригинальные iPhone<br>
-Проверка перед покупкой<br>
-Без предоплаты<br>
-Быстрая встреча в Одинцово
-</p>
 </div>
 
-</div>
-
-<!-- фикс кнопка -->
-<a href="tel:+89296506232" style="
-position: fixed;
-bottom: 15px;
-left: 15px;
-right: 15px;
-background: #00ffaa;
-color: black;
-text-align: center;
-padding: 15px;
-font-weight: bold;
-text-decoration: none;
-border-radius: 10px;
-">
-📞 Позвонить сейчас
+<!-- 🔥 ПУЛЬС КНОПКА -->
+<a href="tel:+79296506232" class="fixed-call">
+📞 Позвонить
 </a>
 
 </body>
